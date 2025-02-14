@@ -90,6 +90,20 @@ export default function Home() {
     <div
       className={`${inter.className} text-gray-200 bg-gray-900 min-h-screen`}
     >
+      <header className="fixed w-full top-0 z-50 border-b border-gray-800 bg-gray-900/80 backdrop-blur-sm">
+        <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="flex items-center space-x-6">
+            <Link
+              href="https://movies.suhaeb.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+            >
+              Movies Hub
+            </Link>
+          </div>
+        </nav>
+      </header>
       {/* Hero Section */}
       <main className="relative flex flex-col items-center justify-center min-h-screen text-center px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 to-gray-900/90" />
@@ -126,7 +140,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-
       {/* Services Section */}
       <section className="py-20 px-6 bg-gray-800/50">
         <div className="max-w-6xl mx-auto">
@@ -152,7 +165,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Projects Section */}
       <section id="projects" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
@@ -206,7 +218,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Skills Section */}
       <section className="py-20 px-6 bg-gray-800/50">
         <div className="max-w-6xl mx-auto">
@@ -227,7 +238,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Contact Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
@@ -258,7 +268,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="border-t border-gray-800 py-8 text-center">
         <div className="max-w-6xl mx-auto px-6">
