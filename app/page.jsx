@@ -49,6 +49,11 @@ const PROJECTS = [
     title: "Expense Tracker",
     link: "https://github.com/suhaibgamal/Expense-Tracker",
   },
+  {
+    img: "/movies-hub.webp",
+    title: "Movies Hub",
+    link: "https://github.com/suhaibgamal/movies-hub",
+  },
 ];
 
 const SKILLS = [
