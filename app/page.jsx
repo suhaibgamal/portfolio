@@ -102,8 +102,11 @@ export default function Home() {
       className={`${inter.className} bg-gray-900 min-h-screen text-gray-200`}
     >
       {/* Fixed Header */}
-      <header className="fixed w-full top-0 z-50 bg-gray-900/80 backdrop-blur-lg border-b border-gray-800">
-        <nav className="max-w-6xl mx-auto px-6 py-5">
+      <header
+        role="banner"
+        className="fixed w-full top-0 z-50 bg-gray-900/80 backdrop-blur-lg border-b border-gray-800"
+      >
+        <nav role="navigation" className="max-w-6xl mx-auto px-6 py-5">
           <Link
             href="https://movies.suhaeb.com"
             target="_blank"
@@ -115,7 +118,10 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24">
+      <section
+        role="main"
+        className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24"
+      >
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/30 to-gray-900/90" />
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           <div className="animate-float">
@@ -154,9 +160,16 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-6 bg-gradient-to-b from-gray-900/30 to-gray-900/80">
+      <section
+        role="region"
+        aria-labelledby="services-heading"
+        className="py-20 px-6 bg-gradient-to-b from-gray-900/30 to-gray-900/80"
+      >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl text-center font-bold mb-16 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+          <h2
+            id="services-heading"
+            className="text-4xl text-center font-bold mb-16 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent"
+          >
             What I Offer
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -181,9 +194,17 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-6 bg-gray-900">
+      <section
+        role="region"
+        aria-labelledby="projects-heading"
+        id="projects"
+        className="py-20 px-6 bg-gray-900"
+      >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl text-center font-bold mb-16 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+          <h2
+            id="projects-heading"
+            className="text-4xl text-center font-bold mb-16 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent"
+          >
             Featured Projects
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -231,9 +252,16 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 px-6 bg-gray-900/50">
+      <section
+        role="region"
+        aria-labelledby="skills-heading"
+        className="py-20 px-6 bg-gray-900/50"
+      >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl text-center font-bold mb-16 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+          <h2
+            id="skills-heading"
+            className="text-4xl text-center font-bold mb-16 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent"
+          >
             Technical Expertise
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -251,9 +279,16 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-6 bg-gray-900">
+      <section
+        role="region"
+        aria-labelledby="contact-heading"
+        className="py-20 px-6 bg-gray-900"
+      >
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl text-center font-bold mb-16 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+          <h2
+            id="contact-heading"
+            className="text-4xl text-center font-bold mb-16 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent"
+          >
             Get In Touch
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -281,7 +316,10 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-800 py-8 text-center bg-gray-900/80 backdrop-blur-lg">
+      <footer
+        role="contentinfo"
+        className="border-t border-gray-800 py-8 text-center bg-gray-900/80 backdrop-blur-lg"
+      >
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-gray-400">
             &copy; {new Date().getFullYear()} Suhaib Gamal. All rights reserved.
