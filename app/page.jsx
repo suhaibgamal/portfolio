@@ -185,6 +185,7 @@ export default function Home() {
               >
                 <div className="overflow-hidden rounded-t-2xl">
                   <Image
+                    unoptimized
                     src={project.img}
                     alt={project.title}
                     width={600}
