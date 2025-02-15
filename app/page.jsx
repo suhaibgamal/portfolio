@@ -21,8 +21,16 @@ const inter = Inter({
 });
 
 const SOCIAL_LINKS = [
-  { href: "https://github.com/suhaibgamal", icon: <FaGithub /> },
-  { href: "https://www.linkedin.com/in/suhaibgamal", icon: <FaLinkedin /> },
+  {
+    href: "https://github.com/suhaibgamal",
+    icon: <FaGithub />,
+    label: "GitHub",
+  },
+  {
+    href: "https://www.linkedin.com/in/suhaibgamal",
+    icon: <FaLinkedin />,
+    label: "LinkedIn",
+  },
 ];
 
 const SERVICES = [
@@ -129,6 +137,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-gray-800 hover:bg-gray-700 rounded-full transition-all duration-300 hover:-translate-y-1"
+                aria-label={social.label}
               >
                 {social.icon}
               </a>
