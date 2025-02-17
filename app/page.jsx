@@ -48,12 +48,12 @@ const SERVICES = [
 
 const PROJECTS = [
   {
-    img: "/password_manager.jpg",
+    img: "/password_manager.webp",
     title: "Password Manager",
     link: "https://github.com/suhaibgamal/Password-Manager",
   },
   {
-    img: "/expense_tracker.jpg",
+    img: "/expense_tracker.webp",
     title: "Expense Tracker",
     link: "https://github.com/suhaibgamal/Expense-Tracker",
   },
