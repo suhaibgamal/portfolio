@@ -14,19 +14,47 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Suhaib | Portfolio - Web Developer & Programmer",
   description:
-    "Explore the portfolio of Suhaib, a skilled web developer and programmer. Discover projects, skills, and services showcasing modern web solutions.",
+    "Explore the portfolio of Suhaib, a highly-skilled web developer and programmer with expertise in modern web technologies, performance optimization, responsive design, and innovative problem-solving.",
+  keywords: [
+    "Web Developer",
+    "Programmer",
+    "JavaScript",
+    "React",
+    "NextJS",
+    "HTML",
+    "CSS",
+    "Responsive Design",
+    "Performance Optimization",
+    "Innovation",
+    "Software Development",
+    "UI/UX Design",
+  ],
+  authors: [
+    {
+      name: "Suhaib Gamal",
+      url: "https://suhaeb.com",
+      role: "Lead Developer",
+      email: "support@suhaeb.com",
+    },
+  ],
   openGraph: {
     title: "Suhaib | Portfolio",
     description:
-      "Explore the portfolio of Suhaib, a skilled web developer and programmer.",
+      "Discover the extensive projects and achievements of Suhaib, showcasing modern web development, performance-focused designs, and innovative solutions.",
     url: "https://suhaeb.com",
-    siteName: "Suhaeb.com",
+    siteName: "Suhaib Electronic Portfolio",
     images: [
       {
-        url: "https://suhaeb.com/og-image.jpg",
+        url: "https://suhaeb.com/favicon.ico",
         width: 1200,
         height: 630,
-        alt: "Suhaib Portfolio",
+        alt: "Suhaib Portfolio Main Image",
+      },
+      {
+        url: "https://suhaeb.com/favicon.ico",
+        width: 1200,
+        height: 630,
+        alt: "Suhaib Portfolio Secondary Image",
       },
     ],
     locale: "en_US",
@@ -37,8 +65,30 @@ export const metadata = {
     site: "@suhaibgamal",
     title: "Suhaib | Portfolio",
     description:
-      "Explore the portfolio of Suhaib, a skilled web developer and programmer.",
-    image: "https://suhaeb.com/og-image.jpg",
+      "Explore the comprehensive portfolio of Suhaib, a web developer and programmer known for crafting innovative and performance-ready web applications.",
+    image: "https://suhaeb.com/favicon.ico",
+  },
+  skills: [
+    "JavaScript",
+    "React",
+    "NextJS",
+    "HTML",
+    "CSS",
+    "Responsive Design",
+    "Performance Optimization",
+    "UI/UX Design",
+    "Agile Methodologies",
+    "SEO Best Practices",
+  ],
+  contact: {
+    email: "contact@suhaeb.com",
+    phone: "+1-234-567-890",
+    address: "123 Developer Lane, Tech City, Country",
+  },
+  social: {
+    github: "https://github.com/suhaibgamal",
+    linkedin: "https://linkedin.com/in/suhaibgamal",
+    twitter: "https://twitter.com/suhaibgamal",
   },
 };
 
