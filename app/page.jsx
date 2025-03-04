@@ -2,16 +2,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import {
-  FaGithub,
-  FaLinkedin,
-  FaMobileAlt,
-  FaLaptopCode,
-  FaPhone,
-  FaEnvelope,
-  FaReact,
-  FaNodeJs,
-} from "react-icons/fa";
-import { SiJavascript, SiPython, SiGit, SiDocker } from "react-icons/si";
+  SiJavascript,
+  SiPython,
+  SiGit,
+  SiDocker,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiHtml5,
+  SiCss3,
+  SiTypescript,
+  SiRedux,
+} from "react-icons/si";
+import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
 import { BiLogoVisualStudio } from "react-icons/bi";
 
 const inter = Inter({
@@ -48,6 +50,18 @@ const SERVICES = [
 
 const PROJECTS = [
   {
+    img: "/movies-hub.webp",
+    title: "Movies Hub",
+    link: "https://github.com/suhaibgamal/movies-hub",
+    online: "https://task-manager.suhaeb.com",
+  },
+  {
+    img: "/task-manager.avif",
+    title: "Task Manager",
+    link: "https://github.com/suhaibgamal/task-manager",
+    online: "https://task-manager.suhaeb.com",
+  },
+  {
     img: "/password_manager.webp",
     title: "Password Manager",
     link: "https://github.com/suhaibgamal/Password-Manager",
@@ -57,11 +71,6 @@ const PROJECTS = [
     title: "Expense Tracker",
     link: "https://github.com/suhaibgamal/Expense-Tracker",
   },
-  {
-    img: "/movies-hub.webp",
-    title: "Movies Hub",
-    link: "https://github.com/suhaibgamal/movies-hub",
-  },
 ];
 
 const SKILLS = [
@@ -69,16 +78,58 @@ const SKILLS = [
     name: "JavaScript",
     icon: <SiJavascript className="text-5xl text-yellow-400" />,
   },
-  { name: "React", icon: <FaReact className="text-5xl text-blue-400" /> },
-  { name: "Node.js", icon: <FaNodeJs className="text-5xl text-green-400" /> },
-  { name: "Python", icon: <SiPython className="text-5xl text-blue-300" /> },
-  { name: "Git", icon: <SiGit className="text-5xl text-red-400" /> },
-  { name: "GitHub", icon: <FaGithub className="text-5xl text-white" /> },
+  {
+    name: "React",
+    icon: <FaReact className="text-5xl text-blue-400" />,
+  },
+  {
+    name: "Next.js",
+    icon: <SiNextdotjs className="text-5xl text-white" />,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss className="text-5xl text-teal-400" />,
+  },
+  {
+    name: "Node.js",
+    icon: <FaNodeJs className="text-5xl text-green-400" />,
+  },
+  {
+    name: "Python",
+    icon: <SiPython className="text-5xl text-blue-300" />,
+  },
+  {
+    name: "Git",
+    icon: <SiGit className="text-5xl text-red-400" />,
+  },
+  {
+    name: "GitHub",
+    icon: <FaGithub className="text-5xl text-white" />,
+  },
   {
     name: "VS Code",
     icon: <BiLogoVisualStudio className="text-5xl text-blue-500" />,
   },
-  { name: "Docker", icon: <SiDocker className="text-5xl text-blue-400" /> },
+  {
+    name: "Docker",
+    icon: <SiDocker className="text-5xl text-blue-400" />,
+  },
+  {
+    name: "HTML5",
+    icon: <SiHtml5 className="text-5xl text-orange-500" />,
+  },
+  {
+    name: "CSS3",
+    icon: <SiCss3 className="text-5xl text-blue-500" />,
+  },
+  {
+    name: "TypeScript",
+    icon: <SiTypescript className="text-5xl text-blue-600" />,
+  },
+  {
+    name: "Redux",
+    icon: <SiRedux className="text-5xl text-purple-500" />,
+  },
 ];
 
 const CONTACTS = [
@@ -113,6 +164,13 @@ export default function Home() {
             className="text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium"
           >
             Movies Hub
+          </Link>
+          <Link
+            href="https://task-manager.suhaeb.com"
+            target="_blank"
+            className="text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium"
+          >
+            Task Manager
           </Link>
         </nav>
       </header>
@@ -225,25 +283,48 @@ export default function Home() {
                 </div>
                 <div className="p-8">
                   <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium"
-                  >
-                    View Project
-                    <svg
-                      className="w-4 h-4 ml-2"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
+                  <div className="flex flex-col md:flex-row gap-4">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium"
                     >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </a>
+                      View Project on GitHub
+                      <svg
+                        className="w-4 h-4 ml-2"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                    {project.online && (
+                      <a
+                        href={project.online}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-green-400 hover:text-green-300 font-medium"
+                      >
+                        View Project Online
+                        <svg
+                          className="w-4 h-4 ml-2"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
