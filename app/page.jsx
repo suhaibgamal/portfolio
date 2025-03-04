@@ -161,32 +161,9 @@ export default function Home() {
     <div
       className={`${inter.className} bg-gray-900 min-h-screen text-gray-200`}
     >
-      {/* Fixed Header */}
-      <header
-        role="banner"
-        className="fixed w-full top-0 z-50 bg-gray-900/80 backdrop-blur-lg border-b border-gray-800"
-      >
-        <nav role="navigation" className="max-w-6xl mx-auto px-6 py-5 gap-4">
-          <Link
-            href="https://movies.suhaeb.com"
-            target="_blank"
-            className="text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium"
-          >
-            Movies Hub
-          </Link>
-          <Link
-            href="https://task-manager.suhaeb.com"
-            target="_blank"
-            className="text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium"
-          >
-            Task Manager
-          </Link>
-        </nav>
-      </header>
-
       {/* Hero Section */}
       <section
-        role="main"
+        role="banner"
         className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/30 to-gray-900/90" />
