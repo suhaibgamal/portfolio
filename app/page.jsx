@@ -62,7 +62,7 @@ const PROJECTS = [
     img: "/movies-hub.webp",
     title: "Movies Hub",
     link: "https://github.com/suhaibgamal/movies-hub",
-    online: "https://task-manager.suhaeb.com",
+    online: "https://movies.suhaeb.com",
   },
   {
     img: "/task-manager.avif",
