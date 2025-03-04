@@ -166,7 +166,7 @@ export default function Home() {
         role="banner"
         className="fixed w-full top-0 z-50 bg-gray-900/80 backdrop-blur-lg border-b border-gray-800"
       >
-        <nav role="navigation" className="max-w-6xl mx-auto px-6 py-5">
+        <nav role="navigation" className="max-w-6xl mx-auto px-6 py-5 gap-4">
           <Link
             href="https://movies.suhaeb.com"
             target="_blank"
