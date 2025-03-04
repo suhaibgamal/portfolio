@@ -13,7 +13,16 @@ import {
   SiTypescript,
   SiRedux,
 } from "react-icons/si";
-import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
+import {
+  FaReact,
+  FaNodeJs,
+  FaGithub,
+  FaLinkedin,
+  FaMobileAlt,
+  FaLaptopCode,
+  FaPhone,
+  FaEnvelope,
+} from "react-icons/fa";
 import { BiLogoVisualStudio } from "react-icons/bi";
 
 const inter = Inter({
