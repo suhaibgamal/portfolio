@@ -24,6 +24,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { BiLogoVisualStudio } from "react-icons/bi";
+import ContactForm from "@/components/ContactForm";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -151,8 +152,8 @@ const CONTACTS = [
   {
     icon: <FaEnvelope className="text-3xl" />,
     label: "Email",
-    link: "mailto:sohibgamal28@gmail.com",
-    text: "sohibgamal28@gmail.com",
+    link: "mailto:contact@suhaeb.com",
+    text: "contact@suhaeb.com",
   },
 ];
 
@@ -379,6 +380,8 @@ export default function Home() {
               </a>
             ))}
           </div>
+          {/* Contact Form Component */}
+          <ContactForm />
         </div>
       </section>
 
