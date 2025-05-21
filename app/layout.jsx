@@ -127,7 +127,7 @@ const webSiteSchema = {
   alternateName: metadata.title,
   url: metadata.openGraph.url,
   description: metadata.description,
-  keywords: metadata.keywords,
+  keywords: metadata.keywords.join(", "),
   inLanguage: metadata.openGraph.locale.split("_")[0],
   author: {
     "@type": "Person",
@@ -135,12 +135,12 @@ const webSiteSchema = {
     url: metadata.authors[0].url,
   },
   publisher: {
-    "@type": "Person", // Or Organization if Suhaib Gamal is a registered company name
-    name: metadata.authors[0].name,
-    url: metadata.authors[0].url,
+    "@type": "Organization", // Changed from "Person" to "Organization"
+    name: metadata.authors[0].name, //  "Suhaib Gamal" can be the name of the organization/brand
+    url: metadata.authors[0].url, // The URL can remain the same
     logo: {
       "@type": "ImageObject",
-      url: metadata.openGraph.images[0].url, // Using the same image as Person and OG
+      url: metadata.openGraph.images[0].url, // This is now correctly under Organization
       width: metadata.openGraph.images[0].width,
       height: metadata.openGraph.images[0].height,
     },
