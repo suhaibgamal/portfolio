@@ -62,7 +62,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@suhaibgamal",
+    site: "@suhaibgmal",
     title: "Suhaib | Portfolio",
     description:
       "Explore the comprehensive portfolio of Suhaib, a web developer and programmer known for crafting innovative and performance-ready web applications.",
