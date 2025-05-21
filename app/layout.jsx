@@ -158,7 +158,10 @@ const webSiteSchema = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
+      <head></head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {/* Person Schema */}
         <script
           id="person-schema"
@@ -171,10 +174,6 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
         {children}
       </body>
     </html>
