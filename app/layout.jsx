@@ -34,31 +34,22 @@ export const metadata = {
     "Tailwind CSS",
     "Docker",
     "TypeScript",
-    "Redux", // Combined for JSON-LD
+    "Redux",
   ],
-  authors: [
-    {
-      name: "Suhaib Gamal",
-      url: "https://suhaeb.com",
-      // role: "Lead Developer", // Not a standard 'authors' sub-property for Next.js metadata object for JSON-LD generation
-      // email: "support@suhaeb.com", // Not a standard 'authors' sub-property
-    },
-  ],
-  // For JSON-LD, we will reference these directly or through the main metadata object
-  creator: "Suhaib Gamal", // Standard 'creator' field
-  publisher: "Suhaib Gamal", // Standard 'publisher' field
-
+  authors: [{ name: "Suhaib Gamal", url: "https://suhaeb.com" }],
+  creator: "Suhaib Gamal",
+  publisher: "Suhaib Gamal",
   openGraph: {
-    title: "Suhaib | Portfolio - Web Developer & Programmer", // Consistent title
+    title: "Suhaib | Portfolio - Web Developer & Programmer",
     description:
       "Explore the portfolio of Suhaib, a highly-skilled web developer and programmer with expertise in modern web technologies, performance optimization, responsive design, and innovative problem-solving.",
     url: "https://suhaeb.com",
-    siteName: "Suhaib Gamal Portfolio", // More direct sitename
+    siteName: "Suhaib Gamal Portfolio",
     images: [
       {
-        url: "https://suhaeb.com/profile.jpg", // <-- Use your main profile image here too
-        width: 1200, // Adjust if known, else common OG size
-        height: 630, // Adjust if known, else common OG size
+        url: "https://suhaeb.com/profile.jpg", // Main image for OG
+        width: 1200, // Adjust as needed
+        height: 630, // Adjust as needed
         alt: "Suhaib Gamal - Full Stack Developer",
       },
     ],
@@ -67,14 +58,14 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@suhaibgamal", // Ensuring consistency
-    creator: "@suhaibgamal", // Often good to have creator tag
+    site: "@suhaibgamal", // Verify this handle
+    creator: "@suhaibgamal", // Verify this handle
     title: "Suhaib | Portfolio - Web Developer & Programmer",
     description:
       "Explore the portfolio of Suhaib Gamal, showcasing modern web development, performance-focused designs, and innovative solutions.",
-    images: ["https://suhaeb.com/profile.jpg"], // Use your main profile image URL
+    images: ["https://suhaeb.com/profile.jpg"], // Main image for Twitter
   },
-  // Custom fields for easier access by JSON-LD, ensure these values are correct
+  // Custom fields for easier access by JSON-LD
   _contact: {
     email: "contact@suhaeb.com",
     phone: "+201556502208",
@@ -83,26 +74,26 @@ export const metadata = {
   _social: {
     github: "https://github.com/suhaibgamal",
     linkedin: "https://linkedin.com/in/suhaibgamal",
-    twitter: "https://twitter.com/suhaibgamal", // Corrected to 'suhaibgamal'
+    twitter: "https://twitter.com/suhaibgamal", // Changed from suhaibgmal, please verify correct one
   },
   _siteInfo: {
-    datePublished: "2024-02-14", // Your filled-in date
-    dateModified: "2025-05-21", // Your filled-in date
+    datePublished: "2024-02-14", // Your chosen date
+    dateModified: "2025-05-21", // Your chosen date
   },
 };
 
-// Enhanced JSON-LD Schemas
+// --- BEGIN JSON-LD SCHEMAS ---
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: metadata.authors[0].name,
   alternateName: ["Suhaib", "Suhaeb"],
   url: metadata.authors[0].url,
-  image: metadata.openGraph.images[0].url, // Using the OG image for consistency
+  image: metadata.openGraph.images[0].url, // Using the same image as OG
   jobTitle: "Full Stack Developer",
   worksFor: {
     "@type": "Organization",
-    name: metadata.authors[0].name,
+    name: metadata.authors[0].name, // Assuming personal brand
   },
   email: `mailto:${metadata._contact.email}`,
   telephone: metadata._contact.phone,
@@ -110,7 +101,7 @@ const personSchema = {
     "@type": "PostalAddress",
     streetAddress: metadata._contact.address.split(",")[0]?.trim(),
     addressLocality: metadata._contact.address.split(",")[1]?.trim(),
-    addressRegion: metadata._contact.address.split(",")[1]?.trim(), // Cairo can also be a region
+    addressRegion: metadata._contact.address.split(",")[1]?.trim(), // Cairo can also be a region/governorate
     addressCountry: metadata._contact.address.split(",")[2]?.trim(),
   },
   sameAs: [
@@ -118,7 +109,7 @@ const personSchema = {
     metadata._social.linkedin,
     metadata._social.twitter,
   ],
-  knowsAbout: metadata.keywords, // Using the main keywords array
+  knowsAbout: metadata.keywords,
   alumniOf: {
     "@type": "EducationalOrganization",
     name: "Cairo University",
@@ -144,20 +135,25 @@ const webSiteSchema = {
     url: metadata.authors[0].url,
   },
   publisher: {
-    "@type": "Person", // Assuming personal brand
+    "@type": "Person", // Or Organization if Suhaib Gamal is a registered company name
     name: metadata.authors[0].name,
     url: metadata.authors[0].url,
     logo: {
-      // It's good for publisher to have a logo, can be same as person image if personal brand
       "@type": "ImageObject",
-      url: metadata.openGraph.images[0].url, // Using the same main image
-      width: metadata.openGraph.images[0].width || 600, // Default if not set
-      height: metadata.openGraph.images[0].height || 600, // Default if not set
+      url: metadata.openGraph.images[0].url, // Using the same image as Person and OG
+      width: metadata.openGraph.images[0].width,
+      height: metadata.openGraph.images[0].height,
     },
   },
   datePublished: metadata._siteInfo.datePublished,
   dateModified: metadata._siteInfo.dateModified,
 };
+
+// --- END JSON-LD SCHEMAS ---
+
+// CRITICAL DEBUG STEP:
+// console.log("PERSON SCHEMA TO VALIDATE:", JSON.stringify(personSchema, null, 2));
+// console.log("WEBSITE SCHEMA TO VALIDATE:", JSON.stringify(webSiteSchema, null, 2));
 
 export default function RootLayout({ children }) {
   return (
