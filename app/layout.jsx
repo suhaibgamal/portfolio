@@ -127,7 +127,7 @@ const webSiteSchema = {
   alternateName: metadata.title,
   url: metadata.openGraph.url,
   description: metadata.description,
-  keywords: metadata.keywords.join(", "),
+  keywords: metadata.keywords,
   inLanguage: metadata.openGraph.locale.split("_")[0],
   author: {
     "@type": "Person",
