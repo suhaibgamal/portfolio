@@ -1,4 +1,4 @@
-// app/layout.jsx
+/* app/layout.jsx */
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -78,30 +78,30 @@ export const metadata = {
   _projectDetails: {
     moviesHub: {
       description:
-        "Modern Next.js 15 app for movie & TV discovery. Features TailwindCSS, Prisma, NextAuth, TMDB API, watchlist & random picker. Fast, responsive, user-friendly! 🚀 This project showcases my ability to integrate external APIs and manage complex application state for a rich user experience.",
+        "Modern Next.js 15 app for movie & TV discovery. Features TailwindCSS, Prisma, NextAuth, TMDB API, watchlist & random picker. Fast, responsive, user-friendly! 🚀",
       url: "https://movies.suhaeb.com",
       image: "https://suhaeb.com/movies-hub.webp",
       codeRepository: "https://github.com/suhaibgamal/movies-hub",
-      programmingLanguage: ["JavaScript", "Next.js", "React"],
+      programmingLanguage: "JavaScript, Next.js, React",
     },
     taskManager: {
       description:
-        "This is a simple React-based task management component that allows users to mark tasks as completed and delete them. It leverages local storage for task persistence and updates dynamically upon user interaction, demonstrating efficient client-side data management.",
+        "Simple React-based task manager using localStorage for persistence. Dynamically updates when tasks are added, marked complete, or deleted.",
       url: "https://task-manager.suhaeb.com",
       image: "https://suhaeb.com/task-manager.avif",
       codeRepository: "https://github.com/suhaibgamal/task-manager",
-      programmingLanguage: ["JavaScript", "React"],
+      programmingLanguage: "JavaScript, React",
     },
     passwordManager: {
       description:
-        "A simple password manager built with Python and PyQt6 to securely store and manage your passwords locally. This desktop application emphasizes security fundamentals and practical utility in everyday digital life.",
+        "A simple password manager built with Python and PyQt6 to securely store and manage your passwords locally.",
       image: "https://suhaeb.com/password_manager.webp",
       codeRepository: "https://github.com/suhaibgamal/Password-Manager",
       programmingLanguage: "Python",
     },
     expenseTracker: {
       description:
-        "Expense Tracker 3.0 is a PyQt6-based desktop application for managing personal expenses. Users can track, categorize, and export their expenses, making financial management simple and efficient through a clear, user-friendly interface.",
+        "Expense Tracker 3.0 is a PyQt6-based desktop application for managing personal expenses with export capability.",
       image: "https://suhaeb.com/expense_tracker.webp",
       codeRepository: "https://github.com/suhaibgamal/Expense-Tracker",
       programmingLanguage: "Python",
@@ -109,8 +109,8 @@ export const metadata = {
   },
 };
 
+// Person Schema
 const personId = metadata.authors[0].url + "/#person";
-
 const personSchemaContent = {
   "@type": "Person",
   "@id": personId,
@@ -137,8 +137,10 @@ const personSchemaContent = {
   knowsAbout: metadata.keywords,
   alumniOf: { "@type": "EducationalOrganization", name: "Cairo University" },
   nationality: { "@type": "Country", name: "Yemen" },
+  mainEntityOfPage: metadata.openGraph.url,
 };
 
+// Website Schema
 const webSiteSchemaContent = {
   "@type": "WebSite",
   "@id": metadata.openGraph.url + "/#website",
@@ -163,15 +165,13 @@ const webSiteSchemaContent = {
   datePublished: metadata._siteInfo.datePublished,
   dateModified: metadata._siteInfo.dateModified,
   mainEntity: { "@type": "Person", "@id": personId },
+  mainEntityOfPage: metadata.openGraph.url,
 };
 
-const freeOffer = {
-  "@type": "Offer",
-  price: "0.00",
-  priceCurrency: "USD",
-};
+// Free Offer for projects
+const freeOffer = { "@type": "Offer", price: "0.00", priceCurrency: "USD" };
 
-// --- Corrected Project Schemas ---
+// Project Schemas
 const moviesHubSchemaContent = {
   "@type": "SoftwareApplication",
   "@id": metadata._projectDetails.moviesHub.url + "/#project",
@@ -183,13 +183,11 @@ const moviesHubSchemaContent = {
   image: metadata._projectDetails.moviesHub.image,
   author: { "@type": "Person", "@id": personId },
   genre: ["Entertainment", "Movie Database"],
-  codeRepository: metadata._projectDetails.moviesHub.codeRepository, // Verified: this is a URL string
-  programmingLanguage: metadata._projectDetails.moviesHub.programmingLanguage, // Verified: this is an array of strings
-  // Removed aggregateRating and review as they are not applicable for portfolio items without actual user reviews.
-  // If Google's Rich Results Test *still* flags their absence as an "error" for suhaeb.com,
-  // it implies a stricter interpretation or a misattribution of this schema to the main page's intent.
+  codeRepository: metadata._projectDetails.moviesHub.codeRepository,
+  programmingLanguage: metadata._projectDetails.moviesHub.programmingLanguage,
   offers: freeOffer,
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
+  mainEntityOfPage: metadata._projectDetails.moviesHub.url,
 };
 
 const taskManagerSchemaContent = {
@@ -207,6 +205,7 @@ const taskManagerSchemaContent = {
   programmingLanguage: metadata._projectDetails.taskManager.programmingLanguage,
   offers: freeOffer,
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
+  mainEntityOfPage: metadata._projectDetails.taskManager.url,
 };
 
 const passwordManagerSchemaContent = {
@@ -216,13 +215,14 @@ const passwordManagerSchemaContent = {
   applicationCategory: "SecurityApplication",
   operatingSystem: "Windows, macOS, Linux",
   programmingLanguage:
-    metadata._projectDetails.passwordManager.programmingLanguage, // Verified: this is a string
+    metadata._projectDetails.passwordManager.programmingLanguage,
   description: metadata._projectDetails.passwordManager.description,
   author: { "@type": "Person", "@id": personId },
   image: metadata._projectDetails.passwordManager.image,
   codeRepository: metadata._projectDetails.passwordManager.codeRepository,
   offers: freeOffer,
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
+  mainEntityOfPage: metadata._projectDetails.passwordManager.codeRepository,
 };
 
 const expenseTrackerSchemaContent = {
@@ -239,8 +239,10 @@ const expenseTrackerSchemaContent = {
   codeRepository: metadata._projectDetails.expenseTracker.codeRepository,
   offers: freeOffer,
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
+  mainEntityOfPage: metadata._projectDetails.expenseTracker.codeRepository,
 };
 
+// Combined Schema Graph: Person, WebSite, and all projects
 const combinedSchema = {
   "@context": "https://schema.org",
   "@graph": [
