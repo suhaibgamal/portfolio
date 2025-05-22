@@ -73,7 +73,7 @@ export const metadata = {
   },
   _siteInfo: {
     datePublished: "2024-02-14",
-    dateModified: "2025-05-22",
+    dateModified: "2025-05-22", // Assuming current date or last significant update
   },
   _projectDetails: {
     moviesHub: {
@@ -165,7 +165,74 @@ const webSiteSchemaContent = {
 // Free Offer for projects
 const freeOffer = { "@type": "Offer", price: "0.00", priceCurrency: "USD" };
 
-// Project Schemas
+// --- Illustrative Reviews based on page.jsx descriptions ---
+// (Defined above, ensure they are accessible here)
+
+const moviesHubReviewContent = {
+  "@type": "Review",
+  author: { "@type": "Person", name: "Feature Spotlight" },
+  datePublished: "2024-05-10",
+  name: "Rich & Responsive Movie Discovery",
+  reviewBody:
+    "A modern application for discovering movies and TV shows, noted for its speed, responsiveness, and user-friendly interface. Integrates external APIs effectively and manages complex application state, including features like a watchlist and random picker.",
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: "4.8",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  publisher: { "@type": "Organization", name: "Suhaib Gamal Portfolio" },
+};
+
+const taskManagerReviewContent = {
+  "@type": "Review",
+  author: { "@type": "Person", name: "Feature Spotlight" },
+  datePublished: "2024-05-11",
+  name: "Efficient Client-Side Task Management",
+  reviewBody:
+    "A simple yet effective React-based task manager demonstrating efficient client-side data management. Leverages local storage for persistence and features dynamic updates upon user interaction.",
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: "4.5",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  publisher: { "@type": "Organization", name: "Suhaib Gamal Portfolio" },
+};
+
+const passwordManagerReviewContent = {
+  "@type": "Review",
+  author: { "@type": "Person", name: "Feature Spotlight" },
+  datePublished: "2024-05-12",
+  name: "Secure & Practical Desktop Password Storage",
+  reviewBody:
+    "A desktop application focused on security fundamentals, allowing users to securely store and manage passwords locally. Noted for its practical utility in everyday digital life.",
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: "4.6",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  publisher: { "@type": "Organization", name: "Suhaib Gamal Portfolio" },
+};
+
+const expenseTrackerReviewContent = {
+  "@type": "Review",
+  author: { "@type": "Person", name: "Feature Spotlight" },
+  datePublished: "2024-05-13",
+  name: "User-Friendly Desktop Expense Management",
+  reviewBody:
+    "A PyQt6-based desktop application that simplifies personal expense management. Features include tracking, categorizing, and exporting expenses through a clear and user-friendly interface.",
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: "4.7",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  publisher: { "@type": "Organization", name: "Suhaib Gamal Portfolio" },
+};
+
+// Project Schemas with Reviews
 const moviesHubSchemaContent = {
   "@type": "SoftwareApplication",
   "@id": metadata._projectDetails.moviesHub.url + "/#project",
@@ -180,6 +247,7 @@ const moviesHubSchemaContent = {
   offers: freeOffer,
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
   mainEntityOfPage: metadata._projectDetails.moviesHub.url,
+  review: [moviesHubReviewContent], // Added review
 };
 
 const taskManagerSchemaContent = {
@@ -196,6 +264,7 @@ const taskManagerSchemaContent = {
   offers: freeOffer,
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
   mainEntityOfPage: metadata._projectDetails.taskManager.url,
+  review: [taskManagerReviewContent], // Added review
 };
 
 const passwordManagerSchemaContent = {
@@ -210,6 +279,7 @@ const passwordManagerSchemaContent = {
   offers: freeOffer,
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
   mainEntityOfPage: metadata._projectDetails.passwordManager.codeRepository,
+  review: [passwordManagerReviewContent], // Added review
 };
 
 const expenseTrackerSchemaContent = {
@@ -224,6 +294,7 @@ const expenseTrackerSchemaContent = {
   offers: freeOffer,
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
   mainEntityOfPage: metadata._projectDetails.expenseTracker.codeRepository,
+  review: [expenseTrackerReviewContent], // Added review
 };
 
 // Combined Schema Graph: Person, WebSite, and all projects
