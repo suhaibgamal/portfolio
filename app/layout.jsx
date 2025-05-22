@@ -78,7 +78,7 @@ export const metadata = {
   _projectDetails: {
     moviesHub: {
       description:
-        "Modern Next.js 15 app for movie & TV discovery. Features TailwindCSS, Prisma, NextAuth, TMDB API, watchlist & random picker. Fast, responsive, user-friendly! 🚀",
+        "Modern Next.js 15 app for movie & TV discovery. Features TailwindCSS, Prisma, NextAuth, TMDB API, watchlist & random picker. Fast, responsive, user-friendly! 🚀 Code Repository: https://github.com/suhaibgamal/movies-hub. Built with: JavaScript, Next.js, React.",
       url: "https://movies.suhaeb.com",
       image: "https://suhaeb.com/movies-hub.webp",
       codeRepository: "https://github.com/suhaibgamal/movies-hub",
@@ -86,7 +86,7 @@ export const metadata = {
     },
     taskManager: {
       description:
-        "Simple React-based task manager using localStorage for persistence. Dynamically updates when tasks are added, marked complete, or deleted.",
+        "Simple React-based task manager using localStorage for persistence. Dynamically updates when tasks are added, marked complete, or deleted. Code Repository: https://github.com/suhaibgamal/task-manager. Built with: JavaScript, React.",
       url: "https://task-manager.suhaeb.com",
       image: "https://suhaeb.com/task-manager.avif",
       codeRepository: "https://github.com/suhaibgamal/task-manager",
@@ -94,14 +94,14 @@ export const metadata = {
     },
     passwordManager: {
       description:
-        "A simple password manager built with Python and PyQt6 to securely store and manage your passwords locally.",
+        "A simple password manager built with Python and PyQt6 to securely store and manage your passwords locally. Code Repository: https://github.com/suhaibgamal/Password-Manager. Built with: Python.",
       image: "https://suhaeb.com/password_manager.webp",
       codeRepository: "https://github.com/suhaibgamal/Password-Manager",
       programmingLanguage: "Python",
     },
     expenseTracker: {
       description:
-        "Expense Tracker 3.0 is a PyQt6-based desktop application for managing personal expenses with export capability.",
+        "Expense Tracker 3.0 is a PyQt6-based desktop application for managing personal expenses with export capability. Code Repository: https://github.com/suhaibgamal/Expense-Tracker. Built with: Python.",
       image: "https://suhaeb.com/expense_tracker.webp",
       codeRepository: "https://github.com/suhaibgamal/Expense-Tracker",
       programmingLanguage: "Python",
@@ -155,12 +155,6 @@ const webSiteSchemaContent = {
     "@type": "Person",
     name: metadata.authors[0].name,
     "@id": personId,
-    logo: {
-      "@type": "ImageObject",
-      url: metadata.openGraph.images[0].url,
-      width: metadata.openGraph.images[0].width,
-      height: metadata.openGraph.images[0].height,
-    },
   },
   datePublished: metadata._siteInfo.datePublished,
   dateModified: metadata._siteInfo.dateModified,
@@ -183,8 +177,6 @@ const moviesHubSchemaContent = {
   image: metadata._projectDetails.moviesHub.image,
   author: { "@type": "Person", "@id": personId },
   genre: ["Entertainment", "Movie Database"],
-  codeRepository: metadata._projectDetails.moviesHub.codeRepository,
-  programmingLanguage: metadata._projectDetails.moviesHub.programmingLanguage,
   offers: freeOffer,
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
   mainEntityOfPage: metadata._projectDetails.moviesHub.url,
@@ -201,8 +193,6 @@ const taskManagerSchemaContent = {
   image: metadata._projectDetails.taskManager.image,
   author: { "@type": "Person", "@id": personId },
   genre: ["Productivity"],
-  codeRepository: metadata._projectDetails.taskManager.codeRepository,
-  programmingLanguage: metadata._projectDetails.taskManager.programmingLanguage,
   offers: freeOffer,
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
   mainEntityOfPage: metadata._projectDetails.taskManager.url,
@@ -214,12 +204,9 @@ const passwordManagerSchemaContent = {
   name: "Password Manager",
   applicationCategory: "SecurityApplication",
   operatingSystem: "Windows, macOS, Linux",
-  programmingLanguage:
-    metadata._projectDetails.passwordManager.programmingLanguage,
   description: metadata._projectDetails.passwordManager.description,
   author: { "@type": "Person", "@id": personId },
   image: metadata._projectDetails.passwordManager.image,
-  codeRepository: metadata._projectDetails.passwordManager.codeRepository,
   offers: freeOffer,
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
   mainEntityOfPage: metadata._projectDetails.passwordManager.codeRepository,
@@ -231,12 +218,9 @@ const expenseTrackerSchemaContent = {
   name: "Expense Tracker",
   applicationCategory: "FinanceApplication",
   operatingSystem: "Windows, macOS, Linux",
-  programmingLanguage:
-    metadata._projectDetails.expenseTracker.programmingLanguage,
   description: metadata._projectDetails.expenseTracker.description,
   author: { "@type": "Person", "@id": personId },
   image: metadata._projectDetails.expenseTracker.image,
-  codeRepository: metadata._projectDetails.expenseTracker.codeRepository,
   offers: freeOffer,
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
   mainEntityOfPage: metadata._projectDetails.expenseTracker.codeRepository,
