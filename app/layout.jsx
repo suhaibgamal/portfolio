@@ -72,19 +72,41 @@ export const metadata = {
     twitter: "https://twitter.com/suhaibgamal",
   },
   _siteInfo: {
-    datePublished: "2024-02-14", // Your chosen date
-    dateModified: "2025-05-22", // IMPORTANT: Update this to the current date of deployment
+    datePublished: "2024-02-14",
+    dateModified: "2025-05-22", // Updated to current date for these changes
   },
-  // Project descriptions for JSON-LD (can also be fetched or managed elsewhere if they grow)
-  _projectDescriptions: {
-    moviesHub:
-      "Modern Next.js 15 app for movie & TV discovery. Features TailwindCSS, Prisma, NextAuth, TMDB API, watchlist & random picker. Fast, responsive, user-friendly! 🚀 This project showcases my ability to integrate external APIs and manage complex application state for a rich user experience.",
-    taskManager:
-      "This is a simple React-based task management component that allows users to mark tasks as completed and delete them. It leverages local storage for task persistence and updates dynamically upon user interaction, demonstrating efficient client-side data management.",
-    passwordManager:
-      "A simple password manager built with Python and PyQt6 to securely store and manage your passwords locally. This desktop application emphasizes security fundamentals and practical utility in everyday digital life.",
-    expenseTracker:
-      "Expense Tracker 3.0 is a PyQt6-based desktop application for managing personal expenses. Users can track, categorize, and export their expenses, making financial management simple and efficient through a clear, user-friendly interface.",
+  _projectDetails: {
+    // Storing project specific details here for clarity in JSON-LD
+    moviesHub: {
+      description:
+        "Modern Next.js 15 app for movie & TV discovery. Features TailwindCSS, Prisma, NextAuth, TMDB API, watchlist & random picker. Fast, responsive, user-friendly! 🚀 This project showcases my ability to integrate external APIs and manage complex application state for a rich user experience.",
+      url: "https://movies.suhaeb.com",
+      image: "https://suhaeb.com/movies-hub.webp",
+      codeRepository: "https://github.com/suhaibgamal/movies-hub",
+      programmingLanguage: ["JavaScript", "Next.js", "React"], // Be specific
+    },
+    taskManager: {
+      description:
+        "This is a simple React-based task management component that allows users to mark tasks as completed and delete them. It leverages local storage for task persistence and updates dynamically upon user interaction, demonstrating efficient client-side data management.",
+      url: "https://task-manager.suhaeb.com",
+      image: "https://suhaeb.com/task-manager.avif",
+      codeRepository: "https://github.com/suhaibgamal/task-manager",
+      programmingLanguage: ["JavaScript", "React"],
+    },
+    passwordManager: {
+      description:
+        "A simple password manager built with Python and PyQt6 to securely store and manage your passwords locally. This desktop application emphasizes security fundamentals and practical utility in everyday digital life.",
+      image: "https://suhaeb.com/password_manager.webp",
+      codeRepository: "https://github.com/suhaibgamal/Password-Manager",
+      programmingLanguage: "Python",
+    },
+    expenseTracker: {
+      description:
+        "Expense Tracker 3.0 is a PyQt6-based desktop application for managing personal expenses. Users can track, categorize, and export their expenses, making financial management simple and efficient through a clear, user-friendly interface.",
+      image: "https://suhaeb.com/expense_tracker.webp",
+      codeRepository: "https://github.com/suhaibgamal/Expense-Tracker",
+      programmingLanguage: "Python",
+    },
   },
 };
 
@@ -146,61 +168,77 @@ const webSiteSchemaContent = {
   mainEntity: { "@type": "Person", "@id": personId },
 };
 
-// Project Schemas - Typed as SoftwareApplication where appropriate
+// Helper for offers
+const freeOffer = {
+  "@type": "Offer",
+  price: "0.00",
+  priceCurrency: "USD", // General currency for free items
+};
+
+// Project Schemas - Updated
 const moviesHubSchemaContent = {
-  "@type": "SoftwareApplication", // Changed to SoftwareApplication
-  "@id": "https://movies.suhaeb.com/#project",
+  "@type": "SoftwareApplication",
+  "@id": metadata._projectDetails.moviesHub.url + "/#project", // Using live URL for ID
   name: "Movies Hub",
-  applicationCategory: "WebApplication", // Added
-  operatingSystem: "Cross-platform", // Web apps are generally cross-platform
-  description: metadata._projectDescriptions.moviesHub,
-  url: "https://movies.suhaeb.com",
-  image: "https://suhaeb.com/movies-hub.webp",
+  applicationCategory: "WebApplication",
+  operatingSystem: "Cross-platform",
+  description: metadata._projectDetails.moviesHub.description,
+  url: metadata._projectDetails.moviesHub.url,
+  image: metadata._projectDetails.moviesHub.image,
   author: { "@type": "Person", "@id": personId },
-  genre: ["Entertainment", "Movie Database"], // Removed "Web Application" as it's in applicationCategory
+  genre: ["Entertainment", "Movie Database"],
+  codeRepository: metadata._projectDetails.moviesHub.codeRepository,
+  programmingLanguage: metadata._projectDetails.moviesHub.programmingLanguage,
+  offers: freeOffer, // Added offers
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
-  // "offers" and "aggregateRating" are omitted as they don't apply to this portfolio piece
 };
 
 const taskManagerSchemaContent = {
-  "@type": "SoftwareApplication", // Changed to SoftwareApplication
-  "@id": "https://task-manager.suhaeb.com/#project",
+  "@type": "SoftwareApplication",
+  "@id": metadata._projectDetails.taskManager.url + "/#project", // Using live URL for ID
   name: "Task Manager",
-  applicationCategory: "WebApplication", // Added
+  applicationCategory: "WebApplication",
   operatingSystem: "Cross-platform",
-  description: metadata._projectDescriptions.taskManager,
-  url: "https://task-manager.suhaeb.com",
-  image: "https://suhaeb.com/task-manager.avif",
+  description: metadata._projectDetails.taskManager.description,
+  url: metadata._projectDetails.taskManager.url,
+  image: metadata._projectDetails.taskManager.image,
   author: { "@type": "Person", "@id": personId },
-  genre: ["Productivity"], // Removed "Web Application"
+  genre: ["Productivity"],
+  codeRepository: metadata._projectDetails.taskManager.codeRepository,
+  programmingLanguage: metadata._projectDetails.taskManager.programmingLanguage,
+  offers: freeOffer, // Added offers
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
 };
 
 const passwordManagerSchemaContent = {
   "@type": "SoftwareApplication",
-  "@id": metadata._social.github + "/Password-Manager/#project",
+  "@id": metadata._projectDetails.passwordManager.codeRepository + "/#project", // Using GitHub URL as base for ID
   name: "Password Manager",
-  applicationCategory: "SecurityApplication", // Correct
+  applicationCategory: "SecurityApplication",
   operatingSystem: "Windows, macOS, Linux",
-  programmingLanguage: "Python",
-  description: metadata._projectDescriptions.passwordManager,
+  programmingLanguage:
+    metadata._projectDetails.passwordManager.programmingLanguage,
+  description: metadata._projectDetails.passwordManager.description,
   author: { "@type": "Person", "@id": personId },
-  image: "https://suhaeb.com/password_manager.webp",
-  codeRepository: metadata._social.github + "/Password-Manager",
+  image: metadata._projectDetails.passwordManager.image,
+  codeRepository: metadata._projectDetails.passwordManager.codeRepository,
+  offers: freeOffer, // Added offers
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
 };
 
 const expenseTrackerSchemaContent = {
   "@type": "SoftwareApplication",
-  "@id": metadata._social.github + "/Expense-Tracker/#project",
+  "@id": metadata._projectDetails.expenseTracker.codeRepository + "/#project", // Using GitHub URL as base for ID
   name: "Expense Tracker",
-  applicationCategory: "FinanceApplication", // Correct
+  applicationCategory: "FinanceApplication",
   operatingSystem: "Windows, macOS, Linux",
-  programmingLanguage: "Python",
-  description: metadata._projectDescriptions.expenseTracker,
+  programmingLanguage:
+    metadata._projectDetails.expenseTracker.programmingLanguage,
+  description: metadata._projectDetails.expenseTracker.description,
   author: { "@type": "Person", "@id": personId },
-  image: "https://suhaeb.com/expense_tracker.webp",
-  codeRepository: metadata._social.github + "/Expense-Tracker",
+  image: metadata._projectDetails.expenseTracker.image,
+  codeRepository: metadata._projectDetails.expenseTracker.codeRepository,
+  offers: freeOffer, // Added offers
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
 };
 
