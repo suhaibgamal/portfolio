@@ -1,93 +1,96 @@
 // app/layout.jsx
-import { Geist, Geist_Mono } from "next/font/google"; // [cite: 413]
-import "./globals.css"; // [cite: 413]
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] }); // [cite: 414]
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-}); // [cite: 414]
+});
 
 export const metadata = {
-  // [cite: 415]
-  title: "Suhaib | Portfolio - Web Developer & Programmer", // [cite: 415]
+  title: "Suhaib | Portfolio - Web Developer & Programmer",
   description:
-    "Explore the portfolio of Suhaib, a highly-skilled web developer and programmer with expertise in modern web technologies, performance optimization, responsive design, and innovative problem-solving.", // [cite: 415]
+    "Explore the portfolio of Suhaib, a highly-skilled web developer and programmer with expertise in modern web technologies, performance optimization, responsive design, and innovative problem-solving.",
   keywords: [
-    // [cite: 415]
     "Web Developer",
     "Programmer",
     "JavaScript",
     "React",
     "NextJS",
     "HTML",
-    "CSS", // [cite: 415]
+    "CSS",
     "Responsive Design",
     "Performance Optimization",
     "Innovation",
     "Software Development",
-    "UI/UX Design", // [cite: 415]
+    "UI/UX Design",
     "Python",
     "Node.js",
     "Tailwind CSS",
     "Docker",
     "TypeScript",
-    "Redux", // [cite: 419]
+    "Redux",
   ],
-  authors: [{ name: "Suhaib Gamal", url: "https://suhaeb.com" }], // [cite: 416]
-  creator: "Suhaib Gamal", // [cite: 416]
-  publisher: "Suhaib Gamal", // [cite: 416]
+  authors: [{ name: "Suhaib Gamal", url: "https://suhaeb.com" }],
+  creator: "Suhaib Gamal",
+  publisher: "Suhaib Gamal",
   openGraph: {
-    // [cite: 416]
-    title: "Suhaib | Portfolio - Web Developer & Programmer", // [cite: 416]
+    title: "Suhaib | Portfolio - Web Developer & Programmer",
     description:
-      "Explore the portfolio of Suhaib, a highly-skilled web developer and programmer with expertise in modern web technologies, performance optimization, responsive design, and innovative problem-solving.", // [cite: 416] // Ensured consistency
-    url: "https://suhaeb.com", // [cite: 416]
-    siteName: "Suhaib Gamal Portfolio", // [cite: 416] // More direct
+      "Explore the portfolio of Suhaib, a highly-skilled web developer and programmer with expertise in modern web technologies, performance optimization, responsive design, and innovative problem-solving.",
+    url: "https://suhaeb.com",
+    siteName: "Suhaib Gamal Portfolio",
     images: [
-      // [cite: 416]
       {
-        url: "https://suhaeb.com/profile.jpg", // IMPORTANT: Ensure this image exists and is suitable for OG
-        width: 1200, // [cite: 417]
-        height: 630, // [cite: 417]
-        alt: "Suhaib Gamal - Full Stack Developer", // [cite: 417]
+        url: "https://suhaeb.com/profile.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Suhaib Gamal - Full Stack Developer",
       },
     ],
-    locale: "en_US", // [cite: 418]
-    type: "website", // [cite: 418]
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    // [cite: 418]
-    card: "summary_large_image", // [cite: 418]
-    site: "@suhaibgamal", // [cite: 418] // Ensure this is your correct active handle
-    creator: "@suhaibgamal", // [cite: 419] // Ensure this is your correct active handle
-    title: "Suhaib | Portfolio - Web Developer & Programmer", // [cite: 419]
+    card: "summary_large_image",
+    site: "@suhaibgamal",
+    creator: "@suhaibgamal",
+    title: "Suhaib | Portfolio - Web Developer & Programmer",
     description:
-      "Explore the comprehensive portfolio of Suhaib, a web developer and programmer known for crafting innovative and performance-ready web applications.", // [cite: 419]
-    images: ["https://suhaeb.com/profile.jpg"], // [cite: 419] // IMPORTANT: Use the same main profile image
+      "Explore the comprehensive portfolio of Suhaib, a web developer and programmer known for crafting innovative and performance-ready web applications.",
+    images: ["https://suhaeb.com/profile.jpg"],
   },
-  // Custom fields used to populate JSON-LD
   _contact: {
-    // [cite: 419]
-    email: "contact@suhaeb.com", // [cite: 419]
-    phone: "+201556502208", // [cite: 419]
-    address: "Faisal St., Cairo, Egypt", // [cite: 420] // Your provided address
+    email: "contact@suhaeb.com",
+    phone: "+201556502208",
+    address: "Faisal St., Cairo, Egypt",
   },
   _social: {
-    // [cite: 420]
-    github: "https://github.com/suhaibgamal", // [cite: 420]
-    linkedin: "https://linkedin.com/in/suhaibgamal", // [cite: 420]
-    twitter: "https://twitter.com/suhaibgamal", // [cite: 420] // Corrected handle
+    github: "https://github.com/suhaibgamal",
+    linkedin: "https://linkedin.com/in/suhaibgamal",
+    twitter: "https://twitter.com/suhaibgamal",
   },
   _siteInfo: {
-    datePublished: "2024-02-14", // Your provided date
+    datePublished: "2024-02-14", // Your chosen date
     dateModified: "2025-05-22", // IMPORTANT: Update this to the current date of deployment
+  },
+  // Project descriptions for JSON-LD (can also be fetched or managed elsewhere if they grow)
+  _projectDescriptions: {
+    moviesHub:
+      "Modern Next.js 15 app for movie & TV discovery. Features TailwindCSS, Prisma, NextAuth, TMDB API, watchlist & random picker. Fast, responsive, user-friendly! 🚀 This project showcases my ability to integrate external APIs and manage complex application state for a rich user experience.",
+    taskManager:
+      "This is a simple React-based task management component that allows users to mark tasks as completed and delete them. It leverages local storage for task persistence and updates dynamically upon user interaction, demonstrating efficient client-side data management.",
+    passwordManager:
+      "A simple password manager built with Python and PyQt6 to securely store and manage your passwords locally. This desktop application emphasizes security fundamentals and practical utility in everyday digital life.",
+    expenseTracker:
+      "Expense Tracker 3.0 is a PyQt6-based desktop application for managing personal expenses. Users can track, categorize, and export their expenses, making financial management simple and efficient through a clear, user-friendly interface.",
   },
 };
 
 // --- JSON-LD SCHEMAS ---
 
-const personId = metadata.authors[0].url + "/#person"; // Unique ID for the Person on this page
+const personId = metadata.authors[0].url + "/#person";
 
 const personSchemaContent = {
   "@type": "Person",
@@ -104,7 +107,7 @@ const personSchemaContent = {
     "@type": "PostalAddress",
     streetAddress: metadata._contact.address.split(",")[0]?.trim(),
     addressLocality: metadata._contact.address.split(",")[1]?.trim(),
-    addressRegion: metadata._contact.address.split(",")[1]?.trim(), // Cairo can also be a region/governorate
+    addressRegion: metadata._contact.address.split(",")[1]?.trim(),
     addressCountry: metadata._contact.address.split(",")[2]?.trim(),
   },
   sameAs: [
@@ -124,16 +127,16 @@ const webSiteSchemaContent = {
   alternateName: metadata.title,
   url: metadata.openGraph.url,
   description: metadata.description,
-  keywords: metadata.keywords, // Using the array directly
+  keywords: metadata.keywords,
   inLanguage: metadata.openGraph.locale.split("_")[0],
   author: { "@type": "Person", "@id": personId },
   publisher: {
     "@type": "Person",
-    name: metadata.authors[0].name, // Name of the publisher (you)
-    "@id": personId, // Can reference your Person @id if you are the publisher
+    name: metadata.authors[0].name,
+    "@id": personId,
     logo: {
       "@type": "ImageObject",
-      url: metadata.openGraph.images[0].url, // Your profile image can serve as a logo
+      url: metadata.openGraph.images[0].url,
       width: metadata.openGraph.images[0].width,
       height: metadata.openGraph.images[0].height,
     },
@@ -143,32 +146,33 @@ const webSiteSchemaContent = {
   mainEntity: { "@type": "Person", "@id": personId },
 };
 
-// Project Schemas
+// Project Schemas - Typed as SoftwareApplication where appropriate
 const moviesHubSchemaContent = {
-  "@type": "WebSite", // This is a live web application
+  "@type": "SoftwareApplication", // Changed to SoftwareApplication
   "@id": "https://movies.suhaeb.com/#project",
   name: "Movies Hub",
-  description:
-    "Modern Next.js 15 app for movie & TV discovery. Features TailwindCSS, Prisma, NextAuth, TMDB API, watchlist & random picker. Fast, responsive, user-friendly! 🚀",
+  applicationCategory: "WebApplication", // Added
+  operatingSystem: "Cross-platform", // Web apps are generally cross-platform
+  description: metadata._projectDescriptions.moviesHub,
   url: "https://movies.suhaeb.com",
   image: "https://suhaeb.com/movies-hub.webp",
   author: { "@type": "Person", "@id": personId },
-  genre: ["Entertainment", "Movie Database", "Web Application"],
-  applicationCategory: "MultimediaApplication",
-  isPartOf: { "@id": metadata.openGraph.url + "/#website" }, // Linking project to main website
+  genre: ["Entertainment", "Movie Database"], // Removed "Web Application" as it's in applicationCategory
+  isPartOf: { "@id": metadata.openGraph.url + "/#website" },
+  // "offers" and "aggregateRating" are omitted as they don't apply to this portfolio piece
 };
 
 const taskManagerSchemaContent = {
-  "@type": "WebSite", // This is also a live web application
+  "@type": "SoftwareApplication", // Changed to SoftwareApplication
   "@id": "https://task-manager.suhaeb.com/#project",
   name: "Task Manager",
-  description:
-    "This is a simple React-based task management component that allows users to mark tasks as completed and delete them. It leverages local storage for task persistence and updates dynamically upon user interaction.",
+  applicationCategory: "WebApplication", // Added
+  operatingSystem: "Cross-platform",
+  description: metadata._projectDescriptions.taskManager,
   url: "https://task-manager.suhaeb.com",
   image: "https://suhaeb.com/task-manager.avif",
   author: { "@type": "Person", "@id": personId },
-  genre: ["Productivity", "Web Application"],
-  applicationCategory: "ProductivityApplication",
+  genre: ["Productivity"], // Removed "Web Application"
   isPartOf: { "@id": metadata.openGraph.url + "/#website" },
 };
 
@@ -176,11 +180,10 @@ const passwordManagerSchemaContent = {
   "@type": "SoftwareApplication",
   "@id": metadata._social.github + "/Password-Manager/#project",
   name: "Password Manager",
-  description:
-    "A simple password manager built with Python and PyQt6 to securely store and manage your passwords.",
-  applicationCategory: "SecurityApplication",
+  applicationCategory: "SecurityApplication", // Correct
   operatingSystem: "Windows, macOS, Linux",
   programmingLanguage: "Python",
+  description: metadata._projectDescriptions.passwordManager,
   author: { "@type": "Person", "@id": personId },
   image: "https://suhaeb.com/password_manager.webp",
   codeRepository: metadata._social.github + "/Password-Manager",
@@ -191,11 +194,10 @@ const expenseTrackerSchemaContent = {
   "@type": "SoftwareApplication",
   "@id": metadata._social.github + "/Expense-Tracker/#project",
   name: "Expense Tracker",
-  description:
-    "Expense Tracker 3.0 is a PyQt6-based desktop application for managing personal expenses. Users can track, categorize, and export their expenses, making financial management simple and efficient.",
-  applicationCategory: "FinanceApplication",
+  applicationCategory: "FinanceApplication", // Correct
   operatingSystem: "Windows, macOS, Linux",
   programmingLanguage: "Python",
+  description: metadata._projectDescriptions.expenseTracker,
   author: { "@type": "Person", "@id": personId },
   image: "https://suhaeb.com/expense_tracker.webp",
   codeRepository: metadata._social.github + "/Expense-Tracker",
@@ -214,8 +216,10 @@ const combinedSchema = {
   ],
 };
 
+// For debugging (uncomment locally):
+// console.log("COMBINED SCHEMA TO VALIDATE:", JSON.stringify(combinedSchema, null, 2));
+
 export default function RootLayout({ children }) {
-  // [cite: 420]
   return (
     <html lang="en">
       <head>
@@ -226,10 +230,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`} // [cite: 420]
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
     </html>
   );
-} // [cite: 421]
+}
