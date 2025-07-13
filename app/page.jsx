@@ -79,47 +79,43 @@ const PROJECTS = [
     title: "Movies Hub",
     description: (
       <span>
-        <FaFilm className="inline text-blue-400 mr-1" /> Modern Next.js 15 app
-        for movie & TV discovery. Features{" "}
-        <FaCodeBranch className="inline text-green-400 mx-1" /> TailwindCSS,
-        Prisma, NextAuth, TMDB API, watchlist & random picker. Fast, responsive,
-        user-friendly!{" "}
-        <span role="img" aria-label="rocket">
-          🚀
-        </span>{" "}
-        This project showcases my ability to integrate external APIs and manage
-        complex application state for a rich user experience.
+        <FaFilm className="inline text-blue-400 mr-1" /> A modern web
+        application for discovering movies and TV shows, built with Next.js 15,
+        TailwindCSS, Prisma, and NextAuth. Integrates the TMDB API, supports
+        watchlists and random picks, and delivers a fast, responsive, and
+        engaging user experience.
       </span>
     ),
     link: "https://github.com/suhaibgamal/movies-hub",
     online: "https://movies.suhaeb.com",
   },
   {
-    img: "/task-manager.avif",
-    title: "Task Manager",
+    img: "/hisab.webp",
+    title: "Hisab (حساب)",
     description: (
       <span>
-        <FaTasks className="inline text-yellow-400 mr-1" /> This is a simple
-        React-based task management component that allows users to mark tasks as
-        completed and delete them. It leverages{" "}
-        <FaLock className="inline text-blue-400 mx-1" /> local storage for task
-        persistence and updates dynamically upon user interaction, demonstrating
-        efficient client-side data management.
+        <FaGlobe className="inline text-blue-400 mr-1" /> Hisab is an
+        open-source web app for managing and splitting shared expenses and
+        settling debts among friends and family{" "}
+        <FaUsers className="inline text-yellow-400 mx-1" />. Designed for
+        Arabic-speaking users, it is built with Next.js, Supabase, and Tailwind
+        CSS, offering a secure <FaLock className="inline text-blue-400 mx-1" />,
+        mobile-friendly <FaMobileAlt className="inline text-teal-400 mx-1" />{" "}
+        experience.
       </span>
     ),
-    link: "https://github.com/suhaibgamal/task-manager",
-    online: "https://task-manager.suhaeb.com",
+    link: "https://github.com/suhaibgamal/hisab",
+    online: "https://hisab.suhaeb.com",
   },
   {
     img: "/password_manager.webp",
     title: "Password Manager",
     description: (
       <span>
-        <FaKey className="inline text-purple-400 mr-1" /> A simple password
-        manager built with Python and PyQt6 to securely store and manage your
-        passwords locally. This desktop application emphasizes{" "}
-        <FaLock className="inline text-blue-400 mx-1" /> security fundamentals
-        and practical utility in everyday digital life.
+        <FaKey className="inline text-purple-400 mr-1" /> A desktop application
+        built with Python and PyQt6 for secure local password management.
+        Emphasizes strong security fundamentals and practical usability for
+        everyday digital life.
       </span>
     ),
     link: "https://github.com/suhaibgamal/Password-Manager",
@@ -129,35 +125,27 @@ const PROJECTS = [
     title: "Expense Tracker",
     description: (
       <span>
-        <FaChartPie className="inline text-green-400 mr-1" /> Expense Tracker
-        3.0 is a PyQt6-based desktop application for managing personal expenses.
-        Users can track, categorize, and export their expenses, making financial
-        management simple and efficient through a clear, user-friendly
-        interface.
+        <FaChartPie className="inline text-green-400 mr-1" /> A PyQt6-based
+        desktop app for tracking, categorizing, and exporting personal expenses.
+        Delivers a clear, user-friendly interface for efficient financial
+        management.
       </span>
     ),
     link: "https://github.com/suhaibgamal/Expense-Tracker",
   },
   {
-    img: "/hisab.webp",
-    title: "Hisab (حساب)",
+    img: "/task-manager.avif",
+    title: "Task Manager",
     description: (
       <span>
-        <FaGlobe className="inline text-blue-400 mr-1" /> Hisab (حساب) is a
-        modern, <FaCodeBranch className="inline text-green-400 mx-1" />{" "}
-        open-source web application for managing and splitting shared expenses
-        and settling debts among friends and family{" "}
-        <FaUsers className="inline text-yellow-400 mx-1" /> with a focus on
-        Arabic-speaking users. Built with{" "}
-        <FaMobileAlt className="inline text-teal-400 mx-1" /> Next.js, Supabase,
-        and Tailwind CSS, Hisab offers a seamless,{" "}
-        <FaLock className="inline text-blue-400 mx-1" /> secure, and
-        mobile-friendly experience{" "}
-        <FaMoneyBillWave className="inline text-green-400 mx-1" />.
+        <FaTasks className="inline text-yellow-400 mr-1" /> A React-based task
+        management tool that enables users to add, complete, and delete tasks.
+        Utilizes local storage for persistence and demonstrates efficient
+        client-side data handling.
       </span>
     ),
-    link: "https://github.com/suhaibgamal/hisab",
-    online: "https://hisab.suhaeb.com",
+    link: "https://github.com/suhaibgamal/task-manager",
+    online: "https://task-manager.suhaeb.com",
   },
 ];
 
