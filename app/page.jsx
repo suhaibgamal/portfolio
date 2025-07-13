@@ -38,7 +38,7 @@ import {
 } from "react-icons/fa";
 import { BiLogoVisualStudio } from "react-icons/bi";
 import ContactForm from "@/components/ContactForm";
-import Hero3DSection from "./Hero3DSection";
+import Project3DCard from "@/components/Project3DCard";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -229,8 +229,6 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/30 to-gray-900/90" />
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-          {/* 3D Hero Animation */}
-          <Hero3DSection />
           <div className="animate-float">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="block text-gray-100 mb-4">
@@ -358,71 +356,7 @@ export default function Home() {
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {PROJECTS.map((project, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-2xl bg-gray-800 hover:shadow-xl hover:shadow-blue-500/10 flex flex-col"
-              >
-                <div className="overflow-hidden rounded-t-2xl">
-                  <Image
-                    unoptimized
-                    src={project.img}
-                    alt={`${project.title} project screenshot`}
-                    width={600}
-                    height={400}
-                    className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-400 text-sm mb-4 leading-relaxed flex-grow">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-col md:flex-row gap-4 mt-auto">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium"
-                    >
-                      View Project on GitHub
-                      <svg
-                        className="w-4 h-4 ml-2"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        {" "}
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
-                          clipRule="evenodd"
-                        />{" "}
-                      </svg>
-                    </a>
-                    {project.online && (
-                      <a
-                        href={project.online}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-green-400 hover:text-green-300 font-medium"
-                      >
-                        View Project Online
-                        <svg
-                          className="w-4 h-4 ml-2"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          {" "}
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
-                            clipRule="evenodd"
-                          />{" "}
-                        </svg>
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
+              <Project3DCard key={index} project={project} />
             ))}
           </div>
         </div>
