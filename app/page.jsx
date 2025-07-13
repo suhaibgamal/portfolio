@@ -71,29 +71,73 @@ const SKILLS = [
   {
     name: "JavaScript",
     icon: <SiJavascript className="text-5xl text-yellow-400" />,
+    link: "https://developer.mozilla.org/docs/Web/JavaScript",
   },
-  { name: "React", icon: <FaReact className="text-5xl text-blue-400" /> },
-  { name: "Next.js", icon: <SiNextdotjs className="text-5xl text-white" /> },
+  {
+    name: "React",
+    icon: <FaReact className="text-5xl text-blue-400" />,
+    link: "https://react.dev/",
+  },
+  {
+    name: "Next.js",
+    icon: <SiNextdotjs className="text-5xl text-white" />,
+    link: "https://nextjs.org/",
+  },
   {
     name: "Tailwind CSS",
     icon: <SiTailwindcss className="text-5xl text-teal-400" />,
+    link: "https://tailwindcss.com/",
   },
-  { name: "Node.js", icon: <FaNodeJs className="text-5xl text-green-400" /> },
-  { name: "Python", icon: <SiPython className="text-5xl text-blue-300" /> },
-  { name: "Git", icon: <SiGit className="text-5xl text-red-400" /> },
-  { name: "GitHub", icon: <FaGithub className="text-5xl text-white" /> },
+  {
+    name: "Node.js",
+    icon: <FaNodeJs className="text-5xl text-green-400" />,
+    link: "https://nodejs.org/",
+  },
+  {
+    name: "Python",
+    icon: <SiPython className="text-5xl text-blue-300" />,
+    link: "https://www.python.org/",
+  },
+  {
+    name: "Git",
+    icon: <SiGit className="text-5xl text-red-400" />,
+    link: "https://git-scm.com/",
+  },
+  {
+    name: "GitHub",
+    icon: <FaGithub className="text-5xl text-white" />,
+    link: "https://github.com/",
+  },
   {
     name: "VS Code",
     icon: <BiLogoVisualStudio className="text-5xl text-blue-500" />,
+    link: "https://code.visualstudio.com/",
   },
-  { name: "Docker", icon: <SiDocker className="text-5xl text-blue-400" /> },
-  { name: "HTML5", icon: <SiHtml5 className="text-5xl text-orange-500" /> },
-  { name: "CSS3", icon: <SiCss3 className="text-5xl text-blue-500" /> },
+  {
+    name: "Docker",
+    icon: <SiDocker className="text-5xl text-blue-400" />,
+    link: "https://www.docker.com/",
+  },
+  {
+    name: "HTML5",
+    icon: <SiHtml5 className="text-5xl text-orange-500" />,
+    link: "https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5",
+  },
+  {
+    name: "CSS3",
+    icon: <SiCss3 className="text-5xl text-blue-500" />,
+    link: "https://developer.mozilla.org/docs/Web/CSS",
+  },
   {
     name: "TypeScript",
     icon: <SiTypescript className="text-5xl text-blue-600" />,
+    link: "https://www.typescriptlang.org/",
   },
-  { name: "Redux", icon: <SiRedux className="text-5xl text-purple-500" /> },
+  {
+    name: "Redux",
+    icon: <SiRedux className="text-5xl text-purple-500" />,
+    link: "https://redux.js.org/",
+  },
 ];
 
 const PHILOSOPHY_POINTS = [
@@ -294,14 +338,24 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {SKILLS.map((skill, index) => (
-              <Card3D key={index}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="mb-4">{skill.icon}</div>
-                  <h3 className="text-md md:text-lg font-medium">
-                    {skill.name}
-                  </h3>
-                </div>
-              </Card3D>
+              <a
+                key={index}
+                href={skill.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={skill.name + " official website"}
+                className="focus:outline-none"
+                tabIndex={0}
+              >
+                <Card3D>
+                  <div className="flex flex-col items-center text-center">
+                    <div className="mb-4">{skill.icon}</div>
+                    <h3 className="text-md md:text-lg font-medium">
+                      {skill.name}
+                    </h3>
+                  </div>
+                </Card3D>
+              </a>
             ))}
           </div>
         </div>
