@@ -38,7 +38,7 @@ import {
 } from "react-icons/fa";
 import { BiLogoVisualStudio } from "react-icons/bi";
 import ContactForm from "@/components/ContactForm";
-import Project3DCard from "@/components/Project3DCard";
+import Projects3DSection from "./Projects3DSection";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -354,11 +354,7 @@ export default function Home() {
           >
             Featured Projects
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {PROJECTS.map((project, index) => (
-              <Project3DCard key={index} project={project} />
-            ))}
-          </div>
+          <Projects3DSection projects={PROJECTS} />
         </div>
       </section>
 
