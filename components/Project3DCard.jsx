@@ -13,6 +13,8 @@ export default function Project3DCard({ project }) {
     imgScale: 1,
     imgZ: 0,
     imgShadow: 0,
+    imgHeight: 256,
+    imgObject: 0, // 0 = cover, 1 = contain
     boxShadow: "0 4px 32px 0 rgba(59,130,246,0.10)",
     config: { mass: 2, tension: 600, friction: 30 },
   }));
@@ -29,6 +31,8 @@ export default function Project3DCard({ project }) {
       imgScale: 1.12,
       imgZ: 40,
       imgShadow: 1,
+      imgHeight: 400,
+      imgObject: 1,
       boxShadow: "0 12px 48px 0 rgba(59,130,246,0.22)",
     };
   }
@@ -46,10 +50,15 @@ export default function Project3DCard({ project }) {
       imgScale: 1,
       imgZ: 0,
       imgShadow: 0,
+      imgHeight: 256,
+      imgObject: 0,
       boxShadow: "0 4px 32px 0 rgba(59,130,246,0.10)",
     });
     setHovered(false);
   }
+
+  // Interpolate objectFit between 'cover' and 'contain'
+  const objectFit = style.imgObject.to((v) => (v > 0.5 ? "contain" : "cover"));
 
   return (
     <animated.div
@@ -76,7 +85,7 @@ export default function Project3DCard({ project }) {
           right: 0,
           margin: "0 auto",
           width: "100%",
-          height: "256px",
+          height: style.imgHeight,
           pointerEvents: "none",
           transform: to(
             [style.imgScale, style.imgZ],
@@ -90,14 +99,22 @@ export default function Project3DCard({ project }) {
           transition: "all 0.35s cubic-bezier(.23,1.12,.32,1)",
         }}
       >
-        <Image
-          unoptimized
-          src={project.img}
-          alt={`${project.title} project screenshot`}
-          width={600}
-          height={400}
-          className="h-64 w-full object-cover rounded-t-2xl"
-        />
+        <animated.div style={{ width: "100%", height: "100%" }}>
+          <Image
+            unoptimized
+            src={project.img}
+            alt={`${project.title} project screenshot`}
+            width={600}
+            height={400}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit,
+              borderRadius: "1rem",
+              transition: "object-fit 0.35s cubic-bezier(.23,1.12,.32,1)",
+            }}
+          />
+        </animated.div>
       </animated.div>
       <div className="p-8 flex flex-col flex-grow mt-64">
         <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
