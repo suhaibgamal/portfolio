@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import { useSpring, animated } from "@react-spring/web";
+import { useSpring, animated, to } from "@react-spring/web";
 import Image from "next/image";
 
 export default function Project3DCard({ project }) {
@@ -44,10 +44,11 @@ export default function Project3DCard({ project }) {
       ref={ref}
       className="relative overflow-hidden rounded-2xl bg-gray-800 flex flex-col shadow-xl border border-gray-700 hover:border-blue-400/30 transition-all duration-300"
       style={{
-        transform: style.rotateX
-          .to((rx) => `perspective(900px) rotateX(${rx}deg)`)
-          .concat(style.rotateY.to((ry) => ` rotateY(${ry}deg)`)),
-        scale: style.scale,
+        transform: to(
+          [style.rotateX, style.rotateY, style.scale],
+          (rx, ry, s) =>
+            `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) scale(${s})`
+        ),
         boxShadow: style.boxShadow,
       }}
       onMouseMove={handleMouseMove}
