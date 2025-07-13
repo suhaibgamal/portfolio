@@ -38,15 +38,13 @@ import {
 } from "react-icons/fa";
 import { BiLogoVisualStudio } from "react-icons/bi";
 import ContactForm from "@/components/ContactForm";
-import dynamic from "next/dynamic";
+import Hero3DSection from "./Hero3DSection";
 
 const inter = Inter({
   subsets: ["latin"],
   weight: "variable",
   display: "swap",
 });
-
-const Hero3D = dynamic(() => import("@/components/Hero3D"), { ssr: false });
 
 const SOCIAL_LINKS = [
   {
@@ -232,9 +230,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/30 to-gray-900/90" />
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           {/* 3D Hero Animation */}
-          <div className="flex justify-center mb-6">
-            <Hero3D />
-          </div>
+          <Hero3DSection />
           <div className="animate-float">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="block text-gray-100 mb-4">
