@@ -1,16 +1,20 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useSpring, animated, to } from "@react-spring/web";
 import Image from "next/image";
 
 export default function Project3DCard({ project }) {
   const ref = useRef(null);
+  const [hovered, setHovered] = useState(false);
   const [style, api] = useSpring(() => ({
     rotateX: 0,
     rotateY: 0,
     scale: 1,
+    imgScale: 1,
+    imgZ: 0,
+    imgShadow: 0,
     boxShadow: "0 4px 32px 0 rgba(59,130,246,0.10)",
-    config: { mass: 3, tension: 500, friction: 40 },
+    config: { mass: 2, tension: 600, friction: 30 },
   }));
 
   function calc(x, y, rect) {
@@ -21,28 +25,36 @@ export default function Project3DCard({ project }) {
     return {
       rotateX,
       rotateY,
-      scale: 1.04,
-      boxShadow: "0 8px 40px 0 rgba(59,130,246,0.18)",
+      scale: 1.06,
+      imgScale: 1.12,
+      imgZ: 40,
+      imgShadow: 1,
+      boxShadow: "0 12px 48px 0 rgba(59,130,246,0.22)",
     };
   }
 
   function handleMouseMove(e) {
     const rect = ref.current.getBoundingClientRect();
     api.start(calc(e.clientX, e.clientY, rect));
+    setHovered(true);
   }
   function handleMouseLeave() {
     api.start({
       rotateX: 0,
       rotateY: 0,
       scale: 1,
+      imgScale: 1,
+      imgZ: 0,
+      imgShadow: 0,
       boxShadow: "0 4px 32px 0 rgba(59,130,246,0.10)",
     });
+    setHovered(false);
   }
 
   return (
     <animated.div
       ref={ref}
-      className="relative overflow-hidden rounded-2xl bg-gray-800 flex flex-col shadow-xl border border-gray-700 hover:border-blue-400/30 transition-all duration-300"
+      className="relative overflow-visible rounded-2xl bg-gray-800 flex flex-col shadow-xl border border-gray-700 hover:border-blue-400/30 transition-all duration-300"
       style={{
         transform: to(
           [style.rotateX, style.rotateY, style.scale],
@@ -56,17 +68,38 @@ export default function Project3DCard({ project }) {
       tabIndex={0}
       aria-label={project.title}
     >
-      <div className="overflow-hidden rounded-t-2xl">
+      <animated.div
+        className="absolute left-0 right-0 mx-auto z-20"
+        style={{
+          top: hovered ? "-32px" : "0px",
+          left: 0,
+          right: 0,
+          margin: "0 auto",
+          width: "100%",
+          height: "256px",
+          pointerEvents: "none",
+          transform: to(
+            [style.imgScale, style.imgZ],
+            (s, z) => `scale(${s}) translateZ(${z}px)`
+          ),
+          boxShadow: style.imgShadow.to((v) =>
+            v
+              ? "0 16px 48px 0 rgba(59,130,246,0.25)"
+              : "0 4px 16px 0 rgba(59,130,246,0.10)"
+          ),
+          transition: "all 0.35s cubic-bezier(.23,1.12,.32,1)",
+        }}
+      >
         <Image
           unoptimized
           src={project.img}
           alt={`${project.title} project screenshot`}
           width={600}
           height={400}
-          className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="h-64 w-full object-cover rounded-t-2xl"
         />
-      </div>
-      <div className="p-8 flex flex-col flex-grow">
+      </animated.div>
+      <div className="p-8 flex flex-col flex-grow mt-64">
         <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
         <p className="text-gray-400 text-sm mb-4 leading-relaxed flex-grow">
           {project.description}
