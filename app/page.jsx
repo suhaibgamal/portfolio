@@ -31,6 +31,7 @@ import {
 import { BiLogoVisualStudio } from "react-icons/bi";
 import ContactForm from "@/components/ContactForm";
 import Projects3DSection from "./Projects3DSection";
+import Card3D from "@/components/Card3D";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -237,20 +238,19 @@ export default function Home() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {PHILOSOPHY_POINTS.map((point, index) => (
-              <div
-                key={index}
-                className="p-6 bg-gray-800/20 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-blue-400/30 transition-all duration-300 text-center hover:scale-105"
-              >
-                <div className="flex justify-center items-center mb-4">
-                  {point.icon}
+              <Card3D key={index}>
+                <div className="text-center flex flex-col items-center">
+                  <div className="flex justify-center items-center mb-4">
+                    {point.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-gray-100">
+                    {point.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    {point.text}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-100">
-                  {point.title}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  {point.text}
-                </p>
-              </div>
+              </Card3D>
             ))}
           </div>
         </div>
@@ -294,13 +294,14 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {SKILLS.map((skill, index) => (
-              <div
-                key={index}
-                className="p-6 md:p-8 bg-gray-800/20 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-blue-400/30 transition-all duration-300 flex flex-col items-center text-center hover:scale-105"
-              >
-                <div className="mb-4">{skill.icon}</div>
-                <h3 className="text-md md:text-lg font-medium">{skill.name}</h3>
-              </div>
+              <Card3D key={index}>
+                <div className="flex flex-col items-center text-center">
+                  <div className="mb-4">{skill.icon}</div>
+                  <h3 className="text-md md:text-lg font-medium">
+                    {skill.name}
+                  </h3>
+                </div>
+              </Card3D>
             ))}
           </div>
         </div>
